@@ -1,0 +1,3 @@
+interface DiscoverProps {
+    Searchtype: string;
+}

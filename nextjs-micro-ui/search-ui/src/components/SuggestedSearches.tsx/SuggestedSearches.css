@@ -1,0 +1,139 @@
+.search-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section-box {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #2b2b2b;
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #007BFF;
+  flex-shrink: 0;
+}
+
+.subheading {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.search-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+.search-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.search-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.search-list::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.search-item {
+  margin-bottom: 6px;
+  border: 1px dashed #007BFF;
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-height: 40px;
+}
+
+.search-item:hover {
+  background-color: #f1f8ff;
+  border-color: #0056b3;
+}
+
+.icon {
+  color: #007BFF;
+  flex-shrink: 0;
+}
+
+.search-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #222;
+  flex: 1;
+  overflow: hidden;
+}
+
+.search-date {
+  font-size: 10px;
+  color: #777;
+  flex-shrink: 0;
+}
+
+.close-icon {
+  margin-left: auto;
+  color: #999;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.close-icon:hover {
+  color: #d00;
+  background-color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 14px;
+  }
+
+  .search-text {
+    font-size: 12px;
+  }
+
+  .search-date {
+    font-size: 9px;
+  }
+
+  .search-item {
+    padding: 4px 6px;
+    min-height: 36px;
+  }
+}

@@ -1,0 +1,176 @@
+.discover-container {
+    width: 100%;
+    border-radius: 8px;
+    background: #1a1a1a;
+    border: 1px solid #333333;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.discover-container:hover {
+    background: #222222;
+    border-color: #444444;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+.discover-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.discover-header:hover {
+    background: #2a2a2a;
+}
+
+.discover-header:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, #666666, #999999);
+    transition: all 0.3s ease;
+}
+
+.discover-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.discover-title>span:first-child {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.discover-header:hover .discover-title>span:first-child {
+    color: #cccccc;
+}
+
+.selected-option {
+    font-size: 12px;
+    color: #888888;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.discover-header:hover .selected-option {
+    color: #aaaaaa;
+}
+
+.discover-icon {
+    color: #888888;
+    transition: all 0.3s ease;
+}
+
+.discover-header:hover .discover-icon {
+    color: #cccccc;
+    transform: scale(1.1);
+}
+
+.discover-options {
+    border-top: 1px solid #333333;
+    background: #0f0f0f;
+}
+
+.discover-option {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #222222;
+    position: relative;
+}
+
+.discover-option:last-child {
+    border-bottom: none;
+}
+
+.discover-option:hover {
+    background: #2a2a2a;
+    padding-left: 28px;
+    transform: translateX(4px);
+}
+
+.discover-option:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, #666666, #999999);
+}
+
+.discover-option.selected {
+    background: #1a1a2e;
+    color: #ffffff;
+    font-weight: 500;
+    border-left: 3px solid #666666;
+}
+
+.discover-option.selected:hover {
+    background: #252542;
+    border-left-color: #888888;
+    transform: translateX(6px);
+}
+
+.option-name {
+    font-size: 13px;
+    color: #cccccc;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.discover-option:hover .option-name {
+    color: #ffffff;
+}
+
+.discover-option.selected .option-name {
+    color: #ffffff;
+}
+
+.check-icon {
+    color: #888888;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.discover-option.selected .check-icon {
+    color: #cccccc;
+}
+
+.discover-option.selected:hover .check-icon {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Animation for smooth expansion */
+.discover-options {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

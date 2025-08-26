@@ -1,0 +1,37 @@
+.selected-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+.selected-items-container {
+    margin-top: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.selected-items-title {
+    font-size: 0.15 rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0.75rem;
+}
+
+.selected-items-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.selected-item-tag {
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.45rem;
+    border-radius: 9999px;
+}

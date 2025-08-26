@@ -1,0 +1,50 @@
+nextjs-micro-ui/Container/node_modules/.bin/acorn
+nextjs-micro-ui/Container/.next
+nextjs-micro-ui/Container/node_modules
+nextjs-micro-ui/micro-ui/node_modules
+nextjs-micro-ui/navigation-ui/node_modules
+nextjs-micro-ui/Container/package-lock.json
+nextjs-micro-ui/navigation-ui/package-lock.json
+nextjs-micro-ui/recommendations-ui/node_modules
+nextjs-micro-ui/recommendations-ui/package-lock.json
+nextjs-micro-ui/node_modules
+service-env/node_modules
+nextjs-micro-ui/search-ui/node_modules
+nextjs-micro-ui/Container/.next/server/pages/_app.js
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/react-app/node_modules
+/.vs/
+nextjs-micro-ui/Container/.next
+nextjs-micro-ui/Container/node_modules
+nextjs-micro-ui/micro-ui/node_modules
+nextjs-micro-ui/navigation-ui/node_modules
+nextjs-micro-ui/Container/package-lock.json
+nextjs-micro-ui/navigation-ui/package-lock.json
+nextjs-micro-ui/recommendations-ui/node_modules
+nextjs-micro-ui/recommendations-ui/package-lock.json
+nextjs-micro-ui/node_modules
+service-env/node_modules
+nextjs-micro-ui/search-ui/node_modules
+nextjs-micro-ui/Container/.next/server/pages/_app.js

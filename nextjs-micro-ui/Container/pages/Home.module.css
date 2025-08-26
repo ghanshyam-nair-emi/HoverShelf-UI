@@ -1,0 +1,170 @@
+.container,
+.containerCollapsed,
+.containerExpanded {
+  height: 98.2vh;
+  width: 99vw;
+  background-color: white;
+  gap: 8px;
+  padding: 8px;
+  overflow: auto;
+  box-sizing: border-box;
+  margin: 0;
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  transition: all 0.3s ease;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 500px 1fr;
+  min-width: 0;
+  min-height: 0;
+  grid-template-areas:
+    "navigation search search"
+    "navigation recommendations recommendations";
+  overflow: auto;
+  transition: all 0.3s ease;
+}
+.containerExpanded
+{
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  grid-template-rows: 500px 1fr;
+  min-width: 0;
+  min-height: 0;
+  grid-template-areas:
+    "navigation search"
+    "navigation recommendations";
+  overflow: auto;
+  transition: all 0.3s ease;
+}
+.containerCollapsed
+{
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 500px 1fr;
+  min-width: 0;
+  min-height: 0;
+  grid-template-areas:
+    "navigation search"
+    "navigation recommendations";
+  overflow: auto;
+  transition: all 0.3s ease;
+}
+
+.navigation {
+  grid-area: navigation;
+  background-color: white;
+  border-radius: 8px;
+  min-width: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow-y: auto;
+  display: flex;
+  border: 1px solid #e1e8ed;
+  flex-direction: column;
+
+  /* New properties */
+  position: relative; /* creates a stacking context */
+  z-index: 10; /* higher than other sections */
+}
+
+.navigationCollpsed {
+  grid-area: navigation;
+  background-color: white;
+  border-radius: 8px;
+  min-width: 0;
+  min-height: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e1e8ed;
+
+  /* New properties */
+  position: relative;
+  z-index: 10;
+}
+
+
+.search {
+  grid-area: search;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e1e8ed;
+  padding: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid #e1e8ed;
+  min-height: 400px; /* Ensure search area has enough height */
+
+}
+
+.recommendations {
+  grid-area: recommendations;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e1e8ed;
+  padding: 8px;
+  min-width: 0;
+  overflow-y: auto;
+  display: flex;
+  border: 1px solid #e1e8ed;
+  flex-direction: column;
+  max-height: 380px; /* Limit height for recommendations */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 220px 1fr 1fr;
+    gap: 6px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto auto 1fr;
+    grid-template-areas:
+      "navigation"
+      "search"
+      "recommendations";
+    gap: 6px;
+    padding: 6px;
+  }
+  
+  .navigation {
+    height: 50px;
+    padding: 4px;
+  }
+  
+  .recommendations {
+    min-height: 150px;
+  }
+}
+
+/* Ensure microfrontend content fits properly */
+.navigation > * {
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+.search > * {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.recommendations > * {
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}

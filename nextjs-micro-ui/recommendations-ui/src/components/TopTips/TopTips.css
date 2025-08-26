@@ -1,0 +1,121 @@
+.hot-topics-container {
+  flex: 1;
+}
+
+.hot-topics-title {
+  border-bottom: 2px solid #666666;
+  padding-bottom: 8px;
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.contact-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-description {
+  width: 100%;
+  max-width: 400px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.feedback-text {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.launch-contact-btn {
+  background: #666666;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.launch-contact-btn:hover {
+  background: #555555;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 102, 102, 0.3);
+}
+
+.launch-contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(102, 102, 102, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 16px;
+  }
+  
+  .contact-description {
+    max-width: 100%;
+    padding: 14px;
+  }
+  
+  .feedback-text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  .contact-title {
+    font-size: 15px;
+  }
+  
+  .launch-contact-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    min-width: 140px;
+  }
+}

@@ -1,0 +1,160 @@
+.search-tips-container,
+.recent-searches-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.59rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    font-style: normal;
+    font-weight: lighter;
+    padding: 1rem;
+    border-radius: 12px;
+    max-width: 600px;
+    justify-content: left;
+    gap: 1rem;
+    margin: auto;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle glow effect on hover */
+.search-tips-container::before,
+.recent-searches-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+/* Hover effects */
+.search-tips-container:hover,
+.recent-searches-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+.search-tips-container:hover::before,
+.recent-searches-container:hover::before {
+    left: 100%;
+}
+
+/* Active state */
+.search-tips-container:active,
+.recent-searches-container:active {
+    transform: translateY(0px);
+    transition: transform 0.1s ease;
+}
+
+/* Icon styling with hover effects */
+.tip-logo,
+.recent-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    transition: all 0.2s ease;
+}
+
+.search-tips-container:hover .tip-logo,
+.recent-searches-container:hover .recent-logo {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+    transform: rotate(5deg) scale(1.05);
+}
+
+.tip-logo svg,
+.recent-logo svg {
+    color: #6366f1;
+    transition: all 0.2s ease;
+}
+
+.search-tips-container:hover .tip-logo svg,
+.recent-searches-container:hover .recent-logo svg {
+    color: #4f46e5;
+    filter: drop-shadow(0 0 6px rgba(79, 70, 229, 0.3));
+}
+
+/* Text content styling */
+.search-tip {
+    flex: 1;
+    transition: all 0.2s ease;
+}
+
+.search-tip h3 {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.search-tips-container:hover .search-tip h3,
+.recent-searches-container:hover .search-tip h3 {
+    color: #111827;
+}
+
+/* Date styling for recent searches */
+.dateofrecent {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.dateofrecent p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.recent-searches-container:hover .dateofrecent {
+    opacity: 0.8;
+}
+
+/* Different hover colors for tips vs recent searches */
+.search-tips-container {
+    --accent-color: rgba(16, 185, 129, 0.1);
+    --accent-color-hover: rgba(16, 185, 129, 0.2);
+}
+
+.recent-searches-container {
+    --accent-color: rgba(245, 158, 11, 0.1);
+    --accent-color-hover: rgba(245, 158, 11, 0.2);
+}
+
+.search-tips-container:hover {
+    background: linear-gradient(135deg, var(--accent-color-hover) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.recent-searches-container:hover {
+    background: linear-gradient(135deg, var(--accent-color-hover) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .search-tips-container,
+    .recent-searches-container {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+        border-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .search-tips-container:hover,
+    .recent-searches-container:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+}

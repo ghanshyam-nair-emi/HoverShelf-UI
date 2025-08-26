@@ -1,0 +1,28 @@
+{
+  "name": "navigation-ui",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack serve --config config/webpack.config.js --port 3002",
+    "build:qa": "webpack --config config/webpack.qa.config.js"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
+    "@mui/material": "^7.2.0",
+    "lucide-react": "^0.539.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.1.6",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.2.0"
+  }
+}
