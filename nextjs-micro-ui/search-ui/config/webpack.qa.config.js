@@ -25,7 +25,7 @@ module.exports = {
     },
     output: {
         filename: '[name].[contenthash].js',
-        publicPath: 'https://microfrontend-passport.qa.euromonitor.com/qa/northstar-searchui/',
+        publicPath: 'https://hovershelfmicrouis.z29.web.core.windows.net/hovermicros/search/',
         chunkFilename: '[name].[contenthash].js',
     },
     plugins: [
