@@ -48,3 +48,6 @@ nextjs-micro-ui/node_modules
 service-env/node_modules
 nextjs-micro-ui/search-ui/node_modules
 nextjs-micro-ui/Container/.next/server/pages/_app.js
+nextjs-micro-ui/navigation-ui/dist
+nextjs-micro-ui/recommendations-ui/dist
+nextjs-micro-ui/search-ui/dist
