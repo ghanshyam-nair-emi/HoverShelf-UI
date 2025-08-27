@@ -53,15 +53,19 @@ const SearchApp = dynamic(
 export default function Home() {
   const [isNavigationCollapsed, setIsNavigationCollapsed] = useState(true);
   const [isNavigationExpanded, setIsNavigationExpanded] = useState(false);
+  type NavigationToggleDetail = { isCollapsed: boolean };
+  type NavigationExpansionDetail = { isExpanded: boolean };
 
 
-  const handleNavigationExpansionToggle = (event) => {
-    setIsNavigationExpanded(event.detail.isExpanded);
-  };
+    const handleNavigationExpansionToggle = (event: Event) => {
+      const customEvent = event as CustomEvent<NavigationExpansionDetail>;
+      setIsNavigationExpanded(customEvent.detail.isExpanded);
+    };
 
-  useEffect(() => {
-    const handleNavigationToggle = (eve) => {
-      setIsNavigationCollapsed(eve.detail.isCollapsed);
+useEffect(() => {
+    const handleNavigationToggle = (event: Event) => {
+      const customEvent = event as CustomEvent<NavigationToggleDetail>;
+      setIsNavigationCollapsed(customEvent.detail.isCollapsed);
     };
 
     window.addEventListener('navigationToggle', handleNavigationToggle);
