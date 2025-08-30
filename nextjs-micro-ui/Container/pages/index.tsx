@@ -39,20 +39,6 @@ export default function Home() {
   const [isNavigationExpanded, setIsNavigationExpanded] = useState(false);
   const { user, loading, logout } = useAuth();
 
-  console.log('🔄 After useAuth hook - user:', user, 'loading:', loading); // Debug log
-
-  useEffect(() => {
-    console.log('🔍 Debug Info:');
-    console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
-    console.log('Firebase Config:', {
-      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY?.substring(0, 10) + '...',
-      authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    });
-    console.log('User state:', user);
-    console.log('Loading state:', loading);
-    console.log('Local storage JWT:', localStorage.getItem('jwt'));
-  }, [user, loading]);
   
   useEffect(() => {
     const handleNavigationToggle = (event: Event) => {

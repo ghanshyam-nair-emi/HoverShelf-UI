@@ -35,7 +35,7 @@ export default function LoginPage() {
             }
 
             const data = await res.json();
-            login(data.jwt);
+            login(data.token);
 
             // Redirect to home page
             router.push('/');
