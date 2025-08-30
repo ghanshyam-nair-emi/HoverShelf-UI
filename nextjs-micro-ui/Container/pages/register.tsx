@@ -6,6 +6,8 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 export default function RegisterPage() {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -36,15 +38,20 @@ export default function RegisterPage() {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const firebaseIdToken = await userCredential.user.getIdToken();
 
-            // Send token to your backend
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+            // Send token + names to your backend
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ firebaseToken: firebaseIdToken }),
+                body: JSON.stringify({ 
+                    firebaseToken: firebaseIdToken,
+                    firstName,
+                    lastName
+                }),
             });
 
             if (!res.ok) {
-                throw new Error('Registration failed');
+                const errorText = await res.text();
+                throw new Error(`Registration failed: ${errorText}`);
             }
 
             const data = await res.json();
@@ -63,6 +70,38 @@ export default function RegisterPage() {
         <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px' }}>
             <h1>Create Account</h1>
             <form onSubmit={handleRegister}>
+                <div style={{ marginBottom: '15px' }}>
+                    <label>First Name:</label>
+                    <input
+                        type="text"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            marginTop: '5px',
+                            border: '1px solid #ccc',
+                            borderRadius: '4px'
+                        }}
+                    />
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                    <label>Last Name:</label>
+                    <input
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            marginTop: '5px',
+                            border: '1px solid #ccc',
+                            borderRadius: '4px'
+                        }}
+                    />
+                </div>
                 <div style={{ marginBottom: '15px' }}>
                     <label>Email:</label>
                     <input
