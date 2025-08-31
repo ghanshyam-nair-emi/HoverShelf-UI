@@ -344,10 +344,8 @@
     gap: 2px;
     border-top: 1px solid #333333;
 }
-
-.Emi-logo-2 img {
-    width: 150px;
-    height: 36px;
+.SavedTagNavigation {
+    margin-bottom: 5px;
 }
 
 .SavedTagNavigationIcon,
@@ -463,6 +461,7 @@
         .SelectedValues:hover .GeographySelectedText {
             color: #ffffff;
         }
+
 
         /* Additional smooth animations */
         * {

@@ -3,7 +3,7 @@ import './Geographies.css';
 import { Check, ChevronDown, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
 
-const Geographies = ({ Searchtype, GeographiesSelection, setGeographiesSelection, setisSelected }) => {
+const Geographies = ({ Searchtype, GeographiesSelection, handleGeographiesSelection, setisSelected }) => {
     
     const geographiesOptions = [
         { id: 'services', name: 'Services' },
@@ -12,8 +12,8 @@ const Geographies = ({ Searchtype, GeographiesSelection, setGeographiesSelection
     ];
 
     const handleOptionClick = (option) => {
-        
-        setGeographiesSelection(option.id);
+
+        handleGeographiesSelection({id: 'Geo', name: option.name});
         setisSelected(true);
     };
 

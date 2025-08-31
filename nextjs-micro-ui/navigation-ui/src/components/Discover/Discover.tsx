@@ -3,19 +3,21 @@ import './Discover.css';
 import { Check, ChevronDown, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
 
-const Discover = ({ Searchtype, DiscoverSelection, setDiscoverSelection, setisSelected }) => {
+const Discover = ({ Searchtype, DiscoverSelection, handleDiscoverSelection, setisSelected }) => {
     
     const discoverOptions = [
-        { id: 'cheddar', name: 'Cheddar.ai' },
-        { id: 'pumpernickel', name: 'Pumpernickel' },
-        { id: 'spotify', name: 'Spotify Transcript' },
-        { id: 'arxiv', name: 'ArxivSearch' },
-        { id: 'mumbai', name: 'MumbaiHunt' }
+        { id: 'cheddar-ai', name: 'Cheddar.ai' },
+        { id: 'laubi-intercom', name: 'Laubi Intercom' },
+        { id: 'mangalyavedi-matrimony', name: 'Mangalyavedi' },
+        { id: 'pumpernickel-agent', name: 'Pumpernickel' },
+        { id: 'podinsights-transcript', name: 'Spotify Transcript' },
+        { id: 'arxiv-search-assistant', name: 'ArxivSearch' },
+        { id: 'mumbaihunt-rent-analysis', name: 'MumbaiHunt' }
     ];
 
     const handleOptionClick = (option) => {
-        
-        setDiscoverSelection(option.id);
+
+        handleDiscoverSelection({id: "disc", name: option.id});
         setisSelected(true);
     };
 

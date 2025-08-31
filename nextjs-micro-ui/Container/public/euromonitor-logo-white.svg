@@ -7,11 +7,11 @@
       }
 
       .cls-1, .cls-2, .cls-3 {
-        stroke-width: 0px;
+        strokeWidth: 0px;
       }
 
       .cls-4 {
-        clip-path: url(#clippath);
+        clipPath: url(#clippath);
       }
 
       .cls-2 {

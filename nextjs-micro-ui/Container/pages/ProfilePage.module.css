@@ -1,0 +1,704 @@
+/* ProfilePage.module.css - Half Screen Size */
+
+/* Container */
+.profileContainer {
+    min-height: calc(50vh - 270px);
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 15%, #2d2d2d 40%, #f8f8f8 70%, #e5e7eb 100%);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 45vw;
+    margin: 0.5rem auto;
+    border-radius: 16px;
+}
+
+.profileContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(248, 248, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(229, 231, 235, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(156, 163, 175, 0.08) 0%, transparent 60%);
+    animation: subtleShift 8s ease-in-out infinite;
+}
+
+@keyframes subtleShift {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+/* Background Elements */
+.backgroundElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floatingShape {
+    position: relative;
+    background: linear-gradient(45deg, rgba(248, 248, 248, 0.12), rgba(229, 231, 235, 0.08));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floatingShape:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    top: 15%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.floatingShape:nth-child(2) {
+    width: 35px;
+    height: 35px;
+    top: 65%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.floatingShape:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    bottom: 25%;
+    left: 25%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% { 
+        transform: translateY(-10px) rotate(180deg);
+        opacity: 0.6;
+    }
+}
+
+/* Profile Card */
+.profileCard {
+    background: rgba(248, 248, 248, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    max-width: 320px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    animation: cardEntrance 1s ease-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profileCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Profile Header */
+.profileHeader {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    animation: headerSlideIn 0.8s ease-out 0.3s both;
+}
+
+@keyframes headerSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.avatarContainer {
+    margin-bottom: 0.5rem;
+    animation: avatarZoom 0.6s ease-out 0.5s both;
+}
+
+@keyframes avatarZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.avatar {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.avatar:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.avatarText {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #f8f8f8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.avatarGlow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(96, 96, 96, 0.3),
+        transparent,
+        rgba(128, 128, 128, 0.3),
+        transparent
+    );
+    animation: avatarRotate 4s linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes avatarRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.headerContent {
+    animation: headerContentFade 0.8s ease-out 0.7s both;
+}
+
+@keyframes headerContentFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profileTitle {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.125rem;
+    background: linear-gradient(135deg, #1a1a1a, #404040, #1a1a1a);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleShimmer 3s ease-in-out infinite;
+    letter-spacing: -0.02em;
+}
+
+@keyframes titleShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.displayName {
+    font-size: 1rem;
+    color: #606060;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.9;
+    transition: color 0.3s ease;
+}
+
+.displayName:hover {
+    color: #404040;
+}
+
+/* Profile Content */
+.profileContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: contentSlideUp 0.8s ease-out 0.9s both;
+}
+
+@keyframes contentSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profileField {
+    position: relative;
+    padding: 0.5rem;
+    background: rgba(26, 26, 26, 0.03);
+    border-radius: 6px;
+    border: 1px solid rgba(64, 64, 64, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fieldFadeIn 0.6s ease-out both;
+}
+
+.profileField:nth-child(1) { animation-delay: 1.1s; }
+.profileField:nth-child(2) { animation-delay: 1.2s; }
+.profileField:nth-child(3) { animation-delay: 1.3s; }
+.profileField:nth-child(4) { animation-delay: 1.4s; }
+
+@keyframes fieldFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.profileField:hover {
+    background: rgba(26, 26, 26, 0.06);
+    border-color: rgba(64, 64, 64, 0.2);
+    transform: translateX(3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fieldLabel {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #606060;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.profileField:hover .fieldLabel {
+    color: #404040;
+}
+
+.fieldValue {
+    position: relative;
+    overflow: hidden;
+}
+
+.fieldText {
+    display: block;
+    font-size: 0.875rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    line-height: 1.3;
+    transition: transform 0.3s ease;
+}
+
+.profileField:hover .fieldText {
+    transform: translateX(2px);
+}
+
+.fieldAccent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #404040, #606060);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profileField:hover .fieldAccent {
+    width: 100%;
+}
+
+/* Profile Footer */
+.profileFooter {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(64, 64, 64, 0.1);
+    display: flex;
+    justify-content: center;
+    animation: footerFadeIn 0.8s ease-out 1.5s both;
+}
+
+@keyframes footerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.statusIndicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(26, 26, 26, 0.05);
+    border-radius: 25px;
+    border: 1px solid rgba(64, 64, 64, 0.1);
+    transition: all 0.3s ease;
+}
+
+.statusIndicator:hover {
+    background: rgba(26, 26, 26, 0.08);
+    transform: scale(1.02);
+}
+
+.statusDot {
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+    50% { 
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+    }
+}
+
+.statusText {
+    font-size: 0.75rem;
+    color: #606060;
+    font-weight: 500;
+}
+
+/* Loading States */
+.loadingSpinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: loadingFadeIn 0.5s ease-out;
+}
+
+@keyframes loadingFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.spinner {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.spinnerOuter,
+.spinnerInner {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.spinnerOuter {
+    width: 40px;
+    height: 40px;
+    border-top-color: #606060;
+    border-right-color: #606060;
+    animation: spinOuter 1.5s linear infinite;
+}
+
+.spinnerInner {
+    width: 28px;
+    height: 28px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top-color: #404040;
+    border-left-color: #404040;
+    animation: spinInner 1s linear infinite reverse;
+}
+
+@keyframes spinOuter {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinInner {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.loadingText {
+    color: #f8f8f8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    animation: loadingTextPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingTextPulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* Error States */
+.errorCard {
+    background: rgba(248, 248, 248, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    animation: errorShake 0.8s ease-out;
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+
+.errorIcon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    animation: errorIconBounce 1s ease-out 0.5s both;
+}
+
+@keyframes errorIconBounce {
+    0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+    40%, 43% { transform: translate3d(0, -10px, 0); }
+    70% { transform: translate3d(0, -5px, 0); }
+    90% { transform: translate3d(0, -2px, 0); }
+}
+
+.errorTitle {
+    font-size: 1.125rem;
+    color: #1a1a1a;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.errorMessage {
+    color: #606060;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profileContainer {
+        padding: 0.75rem;
+        max-width: 90vw;
+        min-height: calc(40vh - 120px);
+    }
+
+    .profileCard {
+        padding: 1.25rem;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .profileTitle {
+        font-size: 1.5rem;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .avatarText {
+        font-size: 1.25rem;
+    }
+
+    .profileField {
+        padding: 0.625rem;
+    }
+
+    .fieldText {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profileContainer {
+        padding: 0.5rem;
+        max-width: 95vw;
+        min-height: calc(35vh - 120px);
+    }
+
+    .profileCard {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .profileTitle {
+        font-size: 1.25rem;
+    }
+
+    .displayName {
+        font-size: 0.875rem;
+    }
+
+    .avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .avatarText {
+        font-size: 1.125rem;
+    }
+
+    .profileField {
+        padding: 0.5rem;
+    }
+
+    .fieldLabel {
+        font-size: 0.7rem;
+    }
+
+    .fieldText {
+        font-size: 0.75rem;
+    }
+}
+
+/* Accessibility */
+.profileField:focus-within {
+    outline: 2px solid rgba(64, 64, 64, 0.5);
+    outline-offset: 2px;
+}
+
+/* Performance optimizations */
+.profileCard,
+.avatar,
+.profileField {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Dark mode considerations */
+@media (prefers-color-scheme: dark) {
+    .profileCard {
+        background: rgba(26, 26, 26, 0.95);
+        border: 1px solid rgba(64, 64, 64, 0.3);
+    }
+
+    .profileTitle {
+        color: #f8f8f8;
+        background: linear-gradient(135deg, #f8f8f8, #d0d0d0, #f8f8f8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .displayName {
+        color: #d0d0d0;
+    }
+
+    .fieldLabel {
+        color: #a0a0a0;
+    }
+
+    .fieldText {
+        color: #f8f8f8;
+    }
+
+    .profileField {
+        background: rgba(64, 64, 64, 0.1);
+        border-color: rgba(96, 96, 96, 0.2);
+    }
+
+    .profileField:hover {
+        background: rgba(64, 64, 64, 0.15);
+    }
+
+    .statusText {
+        color: #d0d0d0;
+    }
+
+    .errorCard {
+        background: rgba(26, 26, 26, 0.95);
+        border: 1px solid rgba(64, 64, 64, 0.3);
+    }
+
+    .errorTitle {
+        color: #f8f8f8;
+    }
+
+    .errorMessage {
+        color: #d0d0d0;
+    }
+}
+
+/* Micro-interactions */
+.profileField::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(64, 64, 64, 0.05),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.profileField:hover::before {
+    left: 100%;
+}
