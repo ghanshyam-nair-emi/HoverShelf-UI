@@ -202,7 +202,7 @@ if (!user) {
               //     return <WorkPage />;
               // }
               else if (ViewValue === 'Creator') {
-                  return <AboutCreator creator={creatorData} />;
+                  return <AboutCreator />;
               }
               else {
                   return <SearchApp />;
