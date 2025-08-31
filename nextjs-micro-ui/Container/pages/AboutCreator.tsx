@@ -1,4 +1,5 @@
 // pages/AboutCreator.tsx
+import creatorData from '../Data/creatorData';
 import styles from './AboutCreator.module.css';
 interface Creator {
     name: string;
@@ -6,7 +7,8 @@ interface Creator {
     description: string;
     portfolioUrl: string;
 }
-export default function AboutCreator({ creator }: { creator: Creator }) {
+export default function AboutCreator() {
+    const creator=creatorData
     const handleVisitPortfolio = (url: string) => {
         window.open(url, "_blank");
     };
