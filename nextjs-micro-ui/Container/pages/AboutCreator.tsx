@@ -1,18 +1,12 @@
 // pages/AboutCreator.tsx
 import styles from './AboutCreator.module.css';
-
-interface CreatorInfo {
+interface Creator {
     name: string;
     imageUrl: string;
     description: string;
     portfolioUrl: string;
 }
-
-interface AboutCreatorProps {
-    creator: CreatorInfo;
-}
-
-export default function AboutCreator({ creator }: AboutCreatorProps) {
+export default function AboutCreator({ creator }: { creator: Creator }) {
     const handleVisitPortfolio = (url: string) => {
         window.open(url, "_blank");
     };
