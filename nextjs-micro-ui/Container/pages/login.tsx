@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useAuth } from '../contexts/AuthContext';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import styles from './Login.module.css';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
@@ -47,79 +48,70 @@ export default function LoginPage() {
     };
 
     return (
-        <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px' }}>
-            <h1>Login to HoverShelf</h1>
-            <form onSubmit={handleLogin}>
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        style={{
-                            width: '100%',
-                            padding: '8px',
-                            marginTop: '5px',
-                            border: '1px solid #ccc',
-                            borderRadius: '4px'
-                        }}
-                    />
+        <div className={styles.container}>
+            <div className={styles.formCard}>
+                <div className={styles.companyLogo}>
+                    <img src="/logocollapsed.png" alt="Hovershelf Logo" className={styles.logo} />
                 </div>
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        style={{
-                            width: '100%',
-                            padding: '8px',
-                            marginTop: '5px',
-                            border: '1px solid #ccc',
-                            borderRadius: '4px'
-                        }}
-                    />
+                <div className={styles.header}>
+                    <h1 className={styles.title}>Hovershelf</h1>
+                    <p className={styles.subtitle}>Welcome back</p>
                 </div>
-                {error && (
-                    <div style={{ color: 'red', marginBottom: '15px' }}>
-                        {error}
+
+                <form onSubmit={handleLogin}>
+                    <div className={styles.inputGroup}>
+                        <label className={styles.label}>Email Address</label>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className={styles.input}
+                        />
                     </div>
-                )}
-                <button
-                    type="submit"
-                    disabled={loading}
-                    style={{
-                        width: '100%',
-                        padding: '10px',
-                        backgroundColor: loading ? '#ccc' : '#007cba',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: loading ? 'not-allowed' : 'pointer',
-                        marginBottom: '15px'
-                    }}
-                >
-                    {loading ? 'Logging in...' : 'Login'}
-                </button>
-            </form>
-            
-            {/* Add registration link */}
-            <div style={{ textAlign: 'center', marginTop: '20px', padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '4px' }}>
-                <p>Don't have an account?</p>
-                <Link href="/register">
-                    <button style={{
-                        padding: '8px 16px',
-                        backgroundColor: '#28a745',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer'
-                    }}>
-                        Create New Account
+
+                    <div className={styles.inputGroup}>
+                        <label className={styles.label}>Password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className={styles.input}
+                        />
+                    </div>
+
+                    {error && (
+                        <div className={styles.errorMessage}>
+                            {error}
+                        </div>
+                    )}
+
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className={`${styles.primaryButton} ${loading ? styles.loading : ''}`}
+                    >
+                        {loading ? 'Signing in...' : 'Sign In'}
                     </button>
-                </Link>
+                </form>
+
+                {/* Registration link */}
+                <div className={styles.linkSection}>
+                    <p className={styles.linkText}>Don't have an account?</p>
+                    <Link href="/register">
+                        <button className={styles.secondaryButton}>
+                            Create New Account
+                        </button>
+                    </Link>
+                </div>
+
+                {/* Forgot password link */}
+                <div className={styles.forgotPassword}>
+                    <a href="#" className={styles.forgotLink}>
+                        Forgot your password?
+                    </a>
+                </div>
             </div>
         </div>
     );
