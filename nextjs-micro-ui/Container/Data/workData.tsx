@@ -32,7 +32,7 @@ const workItems = [
       title: 'PodInsights', 
       imageUrl: '/spotify-transcript.png',
       description: 'Spotify Transcript delivers concise, AI-generated transcripts of Spotify podcasts. Perfect for quick insights and key takeaways, it transforms audio content into digestible text summaries, making podcast content more accessible and searchable.',
-      Pageurl: 'https://spotify-transcript.example.com/'
+      Pageurl: 'https://github.com/ghanshyam-nair-emi/PodInsights'
     },
     { 
       id: 'arxiv-search-assistant',
