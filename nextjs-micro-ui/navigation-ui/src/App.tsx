@@ -42,7 +42,6 @@ const App = () => {
   }
   const handleGeographiesSelection = (selection) => {
     setGeographiesSelection(selection);
-    console.log("Geographies selection changed to:", selection,GeographiesSelection);
     setMainSelection(selection);
       window.dispatchEvent(new CustomEvent('mainSelectionChanged', {
     detail: { id: 'Geo', name: selection.name}
@@ -63,7 +62,6 @@ const App = () => {
     }
     const selection = !isSelected;
     setisSelected(selection);
-    console.log("Selection changed to:", selection);
   }
   const handleDiscoverDropdownToggle = () => {
     if (isCollapsed) {
@@ -71,7 +69,6 @@ const App = () => {
     }
     const newState = !isDiscoverdropdownOpen;
     setisDiscoverdropdownOpen(!isDiscoverdropdownOpen);
-    console.log("Discover dropdown toggled:", !isDiscoverdropdownOpen);
     window.dispatchEvent(new CustomEvent('navigationExpanded', {
       detail: { isExpanded: newState }
     }));
@@ -82,7 +79,6 @@ const App = () => {
     }
     const newState = !isgeodropdownOpen;
     setisGeodropdownOpen(!isgeodropdownOpen);
-    console.log("Geography dropdown toggled:", !isgeodropdownOpen);
     window.dispatchEvent(new CustomEvent('navigationExpanded', {
       detail: { isExpanded: newState }
     }));
@@ -91,7 +87,6 @@ const App = () => {
 
   const handleGeographies = (geo) => {
     setGeographiesData(geo);
-    console.log("Geographies updated:", geo);
   }
 
   const handleToggle = (Collapsed) => {

@@ -57,9 +57,7 @@ const SuggestedSearches: React.FC = () => {
     setRecentSearches((prev) => prev.filter((item) => item.text !== text));
   };
 
-  const handleSearchAction = (query: string) => {
-    console.log(`Search triggered for: ${query}`);
-  };
+  const handleSearchAction = (query: string) => {};
 
   return (
     <Box className="search-container">

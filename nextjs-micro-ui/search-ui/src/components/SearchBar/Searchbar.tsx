@@ -5,10 +5,7 @@ import React, { useState } from "react";
 const SearchBar = ({ handleSearchInputClick }) => {
     const [query, setQuery] = useState("");
 
-    const handleSearch = () => {
-        console.log("Searching for:", query);
-    
-    };
+    const handleSearch = () => {};
 
     return (
         <div className="search-bar" >

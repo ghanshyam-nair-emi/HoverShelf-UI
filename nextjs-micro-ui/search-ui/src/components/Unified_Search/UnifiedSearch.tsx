@@ -13,7 +13,6 @@ const UnifiedSearch: React.FC = () => {
 
   const handleSearchInputClick = (bool) => {
     setSearchInputClick(bool);
-    console.log("Search input clicked");
   }
   return (
     <div className="unified-search">

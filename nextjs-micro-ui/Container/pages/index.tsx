@@ -70,27 +70,6 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('🔍 Debug Info:');
-    console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
-    console.log('Firebase Config:', {
-      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY?.substring(0, 10) + '...',
-      authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    });
-    console.log('🔧 Module Federation URLs:');
-    console.log('Navigation UI:', process.env.NEXT_PUBLIC_NAVIGATION_UI_URL);
-    console.log('Search UI:', process.env.NEXT_PUBLIC_SEARCH_UI_URL);
-    console.log('Recommendations UI:', process.env.NEXT_PUBLIC_RECOMMENDATIONS_UI_URL);
-    console.log('User state:', user);
-    console.log('Loading state:', loading);
-    
-    // Only access localStorage on client side
-    if (typeof window !== 'undefined') {
-      console.log('Local storage JWT:', localStorage.getItem('jwt'));
-    }
-  }, [user, loading]);
-
-  useEffect(() => {
     const handleNavigationToggle = (event: Event) => {
       const customEvent = event as CustomEvent<NavigationToggleDetail>;
       setIsNavigationCollapsed(customEvent.detail.isCollapsed);
@@ -105,8 +84,6 @@ export default function Home() {
       const customEvent = event as CustomEvent<SelectionChangeDetail>;
       setSelectedView(customEvent.detail.id);
       setViewValue(customEvent.detail.name);
-      console.log('Selection changed to:', customEvent.detail.name);
-      console.log()
     };
     const handleLogout = () => {
       logout();
