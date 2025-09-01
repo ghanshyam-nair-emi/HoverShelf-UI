@@ -25,7 +25,7 @@ const workItems = [
       title: 'Pumpernickel – Browser MCP Agent', 
       imageUrl: '/pumpernickel.png',
       description: 'Pumpernickel is an intelligent MCP (Model Context Protocol) agent that operates directly within your browser. It provides seamless AI assistance for web tasks, content analysis, and automated workflows, enhancing your browsing experience with powerful AI capabilities.',
-      Pageurl: 'https://pumpernickel.example.com/'
+      Pageurl: 'https://pumpernickel.streamlit.app/'
     },
     { 
       id: 'podinsights-transcript',
@@ -39,21 +39,14 @@ const workItems = [
       title: 'ArxivSearch – AI Research Assistant', 
       imageUrl: '/arxiv-search.png',
       description: 'ArxivSearch is a Streamlit-powered AI research assistant that helps users discover academic papers on arXiv. Utilizing OpenAI GPT-4o-mini, MultiOn web browsing, and Mem0 with Qdrant for user context, it maintains memory of interests and past interactions for personalized research experiences.',
-      Pageurl: 'https://arxiv-search.example.com/'
-    },
-    { 
-      id: 'hovershelf-retail',
-      title: 'Hovershelf – Smart Retail Experience', 
-      imageUrl: '/Hovershelfshop.png',
-      description: 'Hovershelf is a next-gen retail platform that redefines how consumers shop online. By combining immersive UI/UX with innovative product displays and streamlined checkout processes, it offers a futuristic shopping journey tailored to tech-savvy customers.',
-      Pageurl: 'http://localhost:4200/shop'
+      Pageurl: 'https://arxivsearch.streamlit.app/'
     },
     { 
       id: 'mumbaihunt-rent-analysis',
       title: 'Mumbaihunt – Mumbai Rent Analysis', 
       imageUrl: '/mumbaihunt.png',
       description: 'Mumbaihunt is a comprehensive rental market analysis platform that provides cross-analysis of rent prices across different areas of Mumbai. Using data visualization and market insights, it helps users understand rental trends, compare neighborhoods, and make informed decisions about housing in Mumbai.',
-      Pageurl: 'https://mumbaihunt.example.com/'
+      Pageurl: 'https://ghanshyam-nair-emi.github.io/MumbaiHunt/'
     }
   ];
 
