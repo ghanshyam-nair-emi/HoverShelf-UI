@@ -13,6 +13,9 @@ interface ProductPageProps {
 }
 
 export default function ProductPage({ product }: ProductPageProps) {
+    if (!product) {
+        return <div>Loading...</div>; // or redirect, or show error
+    }
     const handleVisitProduct = (url: string) => {
         window.open(url, "_blank");
     };
