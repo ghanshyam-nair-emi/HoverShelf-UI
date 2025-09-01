@@ -4,7 +4,7 @@ const workItems = [
       title: 'Cheddar AI – News Verification Engine', 
       imageUrl: '/Cheddar.png',
       description: 'Cheddar AI is an MCP-based fact-checking engine designed to verify the authenticity of trending news. By leveraging trusted sources and intelligent algorithms, it confirms whether a story is officially validated or not, empowering users to make informed decisions and avoid misinformation.',
-      Pageurl: 'http://localhost:5173/'
+      Pageurl: 'https://cheddar-beta.vercel.app/'
     },
     {
       id: 'laubi-intercom',
