@@ -1,0 +1,358 @@
+
+.mainhomeHeader {
+  border-bottom: #333 solid 1px;
+}
+
+.mainhomeHeaderContent {
+  display: flex;
+  position: relative;
+  width: 100%;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-size: 7ch;
+  font-style: justify;
+  word-spacing: -0.045em;
+}
+
+.imagehead {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  padding: 0%;
+  margin-bottom: 20px;
+}
+
+.imagehead img {
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: all 2s ease;
+  overflow: hidden;
+}
+
+.mainhomeHeaderContent2 {
+  border-bottom: #333 solid 1px;
+}
+
+.mainhomeHeaderImage {
+  display: flex;
+}
+
+.texthead2 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 13ch;
+}
+
+.servicesTab {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2.5ch;
+}
+
+.serviceContent1 {
+  padding-left: 1rem;
+  display: flex;
+  margin-left: 600px;
+}
+
+.serviceCard1 {
+  margin-right: 50px;
+}
+
+.serviceCard1 h2 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2ch;
+  font-weight: 200;
+}
+
+.serviceCard1 p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2ch;
+  font-weight: 700;
+}
+
+.serviceCard2 h2 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2ch;
+  font-weight: 200;
+}
+
+.serviceCard2 p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2ch;
+  font-weight: 700;
+}
+
+.serviceCard3 {
+  margin-right: 30px;
+}
+
+.serviceCard3 h2 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2ch;
+  font-weight: 200;
+}
+
+.serviceCard3 p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2;
+  font-weight: 700;
+}
+
+.serviceCard4 h2 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2ch;
+  font-weight: 200;
+}
+
+.serviceCard4 p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2;
+  font-weight: 700;
+}
+
+.serviceContent2 {
+  padding-left: 1rem;
+  display: flex;
+  margin-left: 600px;
+}
+
+.redirection {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2ch;
+  font-weight: 200;
+  margin-top: 20px;
+  margin-left: 616px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  color: black;
+  margin-right: 1100px;
+  text-decoration: none;
+  padding: 0.2rem 0.6rem;
+  transition: color 0.3s;
+  border-radius: 10px;
+}
+
+.navLink:hover {
+  background-color: #363b3e;
+  color: #f8f7f9;
+}
+
+.navLink:visited {
+  color: #f8f7f9;
+}
+
+/* About Section Styles */
+.aboutSection {
+  padding: 80px 60px;
+  background-color: #f8f9fa;
+  border-bottom: #333 solid 1px;
+}
+
+.aboutContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.aboutText {
+  flex: 1;
+}
+
+.aboutText h1 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: -0.02em;
+}
+
+.aboutText p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.aboutIcon {
+  transition: transform 0.3s ease;
+}
+
+.aboutIcon:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Portfolio Section Styles */
+.portfolioSection {
+  padding: 80px 60px;
+  background-color: white;
+  border-bottom: #333 solid 1px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionHeader h2 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.sectionHeader p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.productCard {
+  background: #fafafa;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.productCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.productCard:hover::before {
+  left: 100%;
+}
+
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: #333;
+  background: white;
+}
+
+.productIcon {
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover .productIcon {
+  transform: scale(1.15);
+}
+
+.productCard h3 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.productCard p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Values Section Styles */
+.valuesSection {
+  padding: 80px 60px;
+  background-color: #f8f9fa;
+  border-bottom: #333 solid 1px;
+}
+
+.valuesHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.valuesHeader h2 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.valueCard {
+  text-align: center;
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+}
+
+.valueIcon {
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.valueCard:hover .valueIcon {
+  transform: scale(1.1);
+}
+
+.valueCard:hover .valueIcon svg {
+  stroke: #666;
+}
+
+.valueCard h3 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.valueCard p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  font-weight: 400;
+}
+
+.navLink.active {
+  font-weight: 600;
+}
