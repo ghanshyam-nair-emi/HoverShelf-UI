@@ -19,7 +19,7 @@ export default function ContactPage() {
         setSuccess('');
 
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/Email`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Email`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -36,7 +36,6 @@ export default function ContactPage() {
 
             setSuccess('Message sent successfully! We will get back to you soon.');
             
-            // Clear form after successful submission
             setEmail('');
             setSubject('');
             setBody('');
@@ -51,7 +50,6 @@ export default function ContactPage() {
 
     return (
         <div className={styles.container}>
-            {/* Header with company details */}
             <div className={styles.header}>
                 <div className={styles.companyInfo}>
                     <h1 className={styles.companyName}>HoverShelf</h1>
@@ -61,7 +59,6 @@ export default function ContactPage() {
                 </div>
             </div>
 
-            {/* Contact Form */}
             <div className={styles.formSection}>
                 <div className={styles.formCard}>
                     <h2 className={styles.formTitle}>Get in Touch</h2>
